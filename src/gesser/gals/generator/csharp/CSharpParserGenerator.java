@@ -153,8 +153,8 @@ public class CSharpParserGenerator
 		"        this.scanner = scanner;\n"+
 		"        this.semanticAnalyser = semanticAnalyser;\n"+
 		"\n"+
-		"        stack.clear();\n"+
-		"        stack.push(new Integer(0));\n"+
+		"        stack.Clear();\n"+
+		"        stack.Push(0);\n"+
 		"\n"+
 		"        currentToken = scanner.NextToken();\n"+
 		"\n"+
@@ -174,14 +174,14 @@ public class CSharpParserGenerator
         "        }\n"+
         "\n"+
         "        int token = currentToken.GetId();\n"+
-		"        int state = ((Integer)stack.peek()).intValue();\n"+
+		"        int state = (int) stack.Peek();\n"+
 		"\n"+
         "        int[] cmd = ParserConstants.PARSER_TABLE[state][token-1];\n"+
 		"\n"+
 		"        switch (cmd[0])\n"+
 		"        {\n"+
 		"            case SHIFT:\n"+
-		"                stack.push(new Integer(cmd[1]));\n"+
+		"                stack.Push(cmd[1]);\n"+
 		"                previousToken = currentToken;\n"+
 		"                currentToken = scanner.NextToken();\n"+
 		"                return false;\n"+
@@ -192,13 +192,13 @@ public class CSharpParserGenerator
 		"                for (int i=0; i<prod[1]; i++)\n"+
 		"                    stack.pop();\n"+
 		"\n"+
-		"                int oldState = ((Integer)stack.peek()).intValue();\n"+
-		"                stack.push(new Integer(ParserConstants.PARSER_TABLE[oldState][prod[0]-1][1]));\n"+
+		"                int oldState = ((Integer)stack.Peek()).intValue();\n"+
+		"                stack.Push(new Integer(ParserConstants.PARSER_TABLE[oldState][prod[0]-1][1]));\n"+
 		"                return false;\n"+
 		"\n"+
 		"            case ACTION:\n"+
 		"                int action = ParserConstants.FIRST_SEMANTIC_ACTION + cmd[1] - 1;\n"+
-		"                stack.push(new Integer(ParserConstants.PARSER_TABLE[state][action][1]));\n"+
+		"                stack.Push(new Integer(ParserConstants.PARSER_TABLE[state][action][1]));\n"+
 		"                semanticAnalyser.executeAction(cmd[1], previousToken);\n"+
 		"                return false;\n"+
 		"\n"+
@@ -294,9 +294,9 @@ public class CSharpParserGenerator
 		"        this.scanner = scanner;\n"+
 		"        this.semanticAnalyser = semanticAnalyser;\n"+
 		"\n"+
-		"        stack.clear();\n"+
-		"        stack.push(new Integer(Constants.DOLLAR));\n"+
-		"        stack.push(new Integer(Constants.START_SYMBOL));\n"+
+		"        stack.Clear();\n"+
+		"        stack.Push(Constants.DOLLAR);\n"+
+		"        stack.Push(ParserConstants.START_SYMBOL);\n"+
 		"\n"+
 		"        currentToken = scanner.NextToken();\n"+
 		"\n"+
@@ -368,7 +368,7 @@ public class CSharpParserGenerator
 		"            //empilha a produ��o em ordem reversa\n"+
 		"            for (int i=production.Length-1; i>=0; i--)\n"+
 		"            {\n"+
-		"                stack.push(production[i]);\n"+
+		"                stack.Push(production[i]);\n"+
 		"            }\n"+
 		"            return true;\n"+
 		"        }\n"+
