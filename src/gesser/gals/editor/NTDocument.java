@@ -2,43 +2,34 @@ package gesser.gals.editor;
 
 import gesser.gals.analyser.LexicalError;
 import gesser.gals.analyser.Token;
-import gesser.gals.generator.parser.Grammar;
-
+import gesser.gals.parserparser.Constants;
+import gesser.gals.parserparser.Scanner;
 import java.awt.Color;
-
-import javax.swing.text.BadLocationException;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
+import javax.swing.text.*;
 
 /**
  * @author Gesser
- *
- * To change this generated comment edit the template variable "typecomment":
- * Window>Preferences>Java>Templates.
- * To enable and disable the creation of type comments go to
- * Window>Preferences>Java>Code Generation.
  */
-public class BNFDocument extends NTDocument
+
+public class NTDocument extends SyntaxDocument implements Constants
 {	
-	private static final SimpleAttributeSet ACTION_SEM = new SimpleAttributeSet(NORMAL);
-	private static final SimpleAttributeSet EPSILON = new SimpleAttributeSet(NORMAL);
+	protected static final SimpleAttributeSet NON_TERMINAL = new SimpleAttributeSet(NORMAL);
 	
 	static
-	{	
-		StyleConstants.setBackground(ACTION_SEM, Color.WHITE);
-		StyleConstants.setForeground(ACTION_SEM, new Color(0, 128, 0));
-		StyleConstants.setBold(ACTION_SEM, false);
-				
-		StyleConstants.setBackground(EPSILON, Color.WHITE);
-		StyleConstants.setForeground(EPSILON, Color.MAGENTA);
-		StyleConstants.setBold(EPSILON, true);				
+	{
+		StyleConstants.setBackground(NON_TERMINAL, Color.WHITE);
+		StyleConstants.setForeground(NON_TERMINAL, Color.BLACK);
+		StyleConstants.setBold(NON_TERMINAL, true);
+		StyleConstants.setItalic(NON_TERMINAL, false);		
 	}
+	
+	protected Scanner scanner = new Scanner();
 	
 	protected void apply(int startOffset, int endOffset, String input) throws BadLocationException
 	{
 		if (startOffset >= endOffset)
 			return;
-				
+		
 		scanner.setInput( input );
 		scanner.setRange(startOffset, endOffset);
 		scanner.setReturnComents(true);
@@ -49,7 +40,7 @@ public class BNFDocument extends NTDocument
 		
 		while (!done)
 		{
-			int pos;	
+			int pos;
 			
 			try
 			{				
@@ -64,30 +55,15 @@ public class BNFDocument extends NTDocument
 					SimpleAttributeSet att = NORMAL;
 					
 					switch (t.getId())
-					{
-						case PIPE:
-						case SEMICOLON:
-						case DERIVES:
-							att = OPERATOR;						
-							break;
-						case TERM:
-							if (t.getLexeme().charAt(0) == '"')
-								att = STRING;
-							else if (t.getLexeme().equals(Grammar.EPSILON_STR))
-								att = EPSILON;
-							else
-								att = NORMAL;						
-							break;
+					{						
 						case NON_TERM: 
 							att = NON_TERMINAL;
 							break;
 						case -1: 
 							att = COMMENT;
 							break;
-						case ACTION: 
-							att = ACTION_SEM;
-							length++;
-							break;
+						default:
+							throw new LexicalError("Não terminal inválido", pos);
 					}
 					setCharacterAttributes(oldPos, pos-oldPos, NORMAL, true);
 					setCharacterAttributes(pos, length, att, true);
