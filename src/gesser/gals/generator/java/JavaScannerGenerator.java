@@ -184,14 +184,19 @@ public class JavaScannerGenerator
 		"                    end = position;\n"+
 		"                }\n"+
 		(fa.hasContext() ? 
-		"                if (SCANNER_CONTEXT[state][0] == 1)\n" +		"                {\n" +		"                    ctxtState = state;\n" +		"                    ctxtEnd = position;\n" +		"                }\n" : "")+
+		"                if (SCANNER_CONTEXT[state][0] == 1)\n" +
+		"                {\n" +
+		"                    ctxtState = state;\n" +
+		"                    ctxtEnd = position;\n" +
+		"                }\n" : "")+
 		"            }\n"+
 		"        }\n"+
 		"        if (endState < 0 || (endState != state && tokenForState(lastState) == -2))\n"+
 		"            throw new LexicalError(SCANNER_ERROR[lastState], start);\n"+
 		"\n"+
 		(fa.hasContext() ? 
-		"        if (ctxtState != -1 && SCANNER_CONTEXT[endState][1] == ctxtState)\n"+		"            end = ctxtEnd;\n"+
+		"        if (ctxtState != -1 && SCANNER_CONTEXT[endState][1] == ctxtState)\n"+
+		"            end = ctxtEnd;\n"+
 		"\n" : "" )+
 		"        position = end;\n"+
 		"\n"+

@@ -84,7 +84,7 @@ public class Scanner implements Constants, BasicScanner
 					{
 						return analyseTerminal(c);
 					}
-					throw new LexicalError("Caracter Inválido: '"+c+"'", start);
+					throw new LexicalError("Caracter InvÃ¡lido: '"+c+"'", start);
 			}						
 		}
 		return null;
@@ -94,14 +94,14 @@ public class Scanner implements Constants, BasicScanner
 	{
 		int start = pos-1;
 		if ( ! hasMoreChars() )
-			throw new LexicalError("Caracter Inválido: '/'", start);
+			throw new LexicalError("Caracter InvÃ¡lido: '/'", start);
 			
 		char c = nextChar();
 		
 		if (c != '/')
 		{
 			pushChar();
-			throw new LexicalError("Caracter Inválido: '/'", start);	
+			throw new LexicalError("Caracter InvÃ¡lido: '/'", start);	
 		}
 		
 		StringBuffer result = new StringBuffer("//");
@@ -133,7 +133,7 @@ public class Scanner implements Constants, BasicScanner
 					return new Token(DERIVES, "::=", start);
 			}
 		}
-		throw new LexicalError("Símbolo Inválido", start);
+		throw new LexicalError("SÃ­mbolo InvÃ¡lido", start);
 	}
 	
 	public int getPosition()
@@ -187,10 +187,10 @@ public class Scanner implements Constants, BasicScanner
 						close = true;
 				}
 				else if (c == '\n')
-					throw new LexicalError("Terminal inválido", start);
+					throw new LexicalError("Terminal invÃ¡lido", start);
 			}
 			if (bfr.length() == 0 || !close)
-				throw new LexicalError("Terminal inválido", start);
+				throw new LexicalError("Terminal invÃ¡lido", start);
 		}
 		else
 		{			
@@ -219,11 +219,11 @@ public class Scanner implements Constants, BasicScanner
 			if (c == '>')
 				break;
 			else if (!Character.isLetterOrDigit(c) && c != '_')
-				throw new LexicalError("Não-Terminal inválido", start);
+				throw new LexicalError("NÃ£o-Terminal invÃ¡lido", start);
 			bfr.append(c);
 		}		
 		if (bfr.length() == 0 || c != '>')
-			throw new LexicalError("Não-Terminal inválido", start);
+			throw new LexicalError("NÃ£o-Terminal invÃ¡lido", start);
 		else 
 			return new Token(NON_TERM, "<"+bfr+">", start);
 	}
@@ -246,7 +246,7 @@ public class Scanner implements Constants, BasicScanner
 		}
 		
 		if (bfr.length() == 0)
-			throw new LexicalError("Ação Semântica inválida", start);
+			throw new LexicalError("AÃ§Ã£o SemÃ¢ntica invÃ¡lida", start);
 		else
 			return new Token(ACTION, bfr.toString(), start);
 	}

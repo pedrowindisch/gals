@@ -50,26 +50,26 @@ public interface Constants
 		
 	String[] EXPECTED_MESSAGE = 
 		{
-			"î",
+			"Ã®",
 			"$",
 			"::=",
 			"|",
 			";",
-			"um símbolo terminal",
-			"um símbolo não-terminal",
-			"uma ação semântica"
+			"um sÃ­mbolo terminal",
+			"um sÃ­mbolo nÃ£o-terminal",
+			"uma aÃ§Ã£o semÃ¢ntica"
 		};
 		
 	String[] PARSER_ERROR = 
 		{
-			"Era esperado um Não-Terminal (Início de produção)",
-			"Era esperado um Não-Terminal (Início de produção)",
-			"Era esperado um Não-Terminal",
+			"Era esperado um NÃ£o-Terminal (InÃ­cio de produÃ§Ã£o)",
+			"Era esperado um NÃ£o-Terminal (InÃ­cio de produÃ§Ã£o)",
+			"Era esperado um NÃ£o-Terminal",
 			"Era esperado '|' ou ';'",
-			"Era esperado um Terminal, um Não-Terminal, ou uma Ação Semântica",
-			"Construção inválida",
+			"Era esperado um Terminal, um NÃ£o-Terminal, ou uma AÃ§Ã£o SemÃ¢ntica",
+			"ConstruÃ§Ã£o invÃ¡lida",
 			"Era esperado um Terminal",
-			"Era esperado um Não-Terminal",
-			"Era esperado uma Ação Semântica"
+			"Era esperado um NÃ£o-Terminal",
+			"Era esperado uma AÃ§Ã£o SemÃ¢ntica"
 		};
 }

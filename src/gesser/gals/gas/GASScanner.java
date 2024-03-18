@@ -94,7 +94,7 @@ public class GASScanner implements Constants
 
     private void handleError(int tokenStart, int position) throws LexicalError
     {
-        throw new LexicalError("Token inv·lido: "+input.substring(tokenStart, position), tokenStart);
+        throw new LexicalError("Token inv√°lido: "+input.substring(tokenStart, position), tokenStart);
     }
     private int nextState(char c, int state)
     {

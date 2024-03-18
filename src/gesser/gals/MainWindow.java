@@ -54,7 +54,7 @@ public class MainWindow extends JFrame
 	
 	private MainWindow()
 	{
-		super ("GALS - Gerador de Analisadores Léxicos e Sintáticos");
+		super ("GALS - Gerador de Analisadores LÃ©xicos e SintÃ¡ticos");
 		
 		setIconImage(GALS.getImage());
 		
@@ -178,7 +178,7 @@ public class MainWindow extends JFrame
     	grammar.add(new JMenuItem(Actions.recursion));
     	grammar.add(new JMenuItem(Actions.condition3));
     	
-    	JMenu doc = new JMenu("Documentação");
+    	JMenu doc = new JMenu("DocumentaÃ§Ã£o");
     	
     	doc.add(lexTable);
     	doc.add(syntTable); //Sintatico - LL(1)
@@ -186,7 +186,7 @@ public class MainWindow extends JFrame
     	doc.add(ff);     //Sintatico    	
     	
     	/*
-    	JMenu transform = new JMenu("Transformações");
+    	JMenu transform = new JMenu("TransformaÃ§Ãµes");
     	
     	transform.add(new JMenuItem(Actions.undo));
     	Actions.undo.setEnabled(false);

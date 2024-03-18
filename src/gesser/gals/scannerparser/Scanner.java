@@ -107,7 +107,7 @@ public class Scanner implements Constants, BasicScanner
 	}
 	
 	/**
-	 * Extrai o caracter especial de uma combinaÁ„o de character especial
+	 * Extrai o caracter especial de uma combina√ß√£o de character especial
 	 * */
 
 	private char getSpecialChar() throws LexicalError
@@ -151,7 +151,7 @@ public class Scanner implements Constants, BasicScanner
 				if (Character.isDigit(c))
 					return getCharByCode(c);
 				else
-					throw new LexicalError("Caracter especial inv·lido: '"+c+"'", pos);
+					throw new LexicalError("Caracter especial inv√°lido: '"+c+"'", pos);
 		}
 	}
 
@@ -174,7 +174,7 @@ public class Scanner implements Constants, BasicScanner
 		String n = in.substring(start, pos);
 		int value = Integer.parseInt(n);
 		if ( value > 255 )
-			throw new LexicalError("Valor decimal inv·lido (>255)", start);
+			throw new LexicalError("Valor decimal inv√°lido (>255)", start);
 			
 		return (char) value;
 	}
@@ -200,13 +200,13 @@ public class Scanner implements Constants, BasicScanner
 				break;
 				
 			if (c != '_' && ! Character.isLetterOrDigit(c))
-				throw new LexicalError("Caracter inv·lido em uma definiÁ„o: '"+c+"'", pos-1);
+				throw new LexicalError("Caracter inv√°lido em uma defini√ß√£o: '"+c+"'", pos-1);
 				
 			tok.append(c);
 		}
 		
 		if (c != '}' && !hasMoreChars())
-			throw new LexicalError("Fim de express„o inesperado", pos);
+			throw new LexicalError("Fim de express√£o inesperado", pos);
 		
 		return new Token(DEFINITION, tok.toString(), start);
 	}

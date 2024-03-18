@@ -10,15 +10,15 @@ import javax.swing.UIManager;
 /*
  * TODO: Problema de contexto sem nada depois
  * TODO: Simulador Passo a Passo
- * TODO: Comprimir Tabelas LÈxico - C++ 
- * TODO: Comprimir Tabelas LÈxico - Delphi
- * TODO: Comprimir Tabelas Sint·tico - Java
- * TODO: Comprimir Tabelas Sint·tico - C++
- * TODO: Comprimir Tabelas Sint·tico - Delphi
- * TODO: Mostrar AF em modo gr·fico
+ * TODO: Comprimir Tabelas L√©xico - C++ 
+ * TODO: Comprimir Tabelas L√©xico - Delphi
+ * TODO: Comprimir Tabelas Sint√°tico - Java
+ * TODO: Comprimir Tabelas Sint√°tico - C++
+ * TODO: Comprimir Tabelas Sint√°tico - Delphi
+ * TODO: Mostrar AF em modo gr√°fico
  * TODO: Melhorar msgs de erro para (S|LA)?LR
  * TODO: Eliminar Calculo repedido do AF (qd sintatico pega lista de tokens)
- * TODO: Reabilitar transformaÁıes
+ * TODO: Reabilitar transforma√ß√µes
  */
 
 public class GALS

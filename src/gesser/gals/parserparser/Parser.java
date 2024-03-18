@@ -55,7 +55,7 @@ public class Parser implements Constants
 	        	else
 	        	{
 	        		if (token.getId() != TERM)
-	        			throw new SemanticError("Era esperada a declaraÁ„o de um terminal", token.getPosition());
+	        			throw new SemanticError("Era esperada a declara√ß√£o de um terminal", token.getPosition());
 	        		String str = token.getLexeme();
 	        		
 					if (s.contains(str))
@@ -68,12 +68,12 @@ public class Parser implements Constants
 	        		pos++;
 	        		if ((token=scanner.nextToken()) != null)// mais de um terminal por linha
 	        		{
-	        			throw new SemanticError("Cada linha deve conter a declaraÁ„o de apenas um sÌmbolo terminal", token.getPosition());
+	        			throw new SemanticError("Cada linha deve conter a declara√ß√£o de apenas um s√≠mbolo terminal", token.getPosition());
 	        		}
 	        	}
 	        }
 			if (t.size() == 0)
-				throw new SemanticError("Conjunto de Terminais n„o pode ser vazio", 0);
+				throw new SemanticError("Conjunto de Terminais n√£o pode ser vazio", 0);
 		}
 		catch(AnalysisError e)
 		{
@@ -106,11 +106,11 @@ public class Parser implements Constants
 	        	else
 	        	{
 	        		if (token.getId() != NON_TERM)
-	        			throw new SemanticError("Era esperada a declaraÁ„o de um n„o-terminal", token.getPosition());
+	        			throw new SemanticError("Era esperada a declara√ß√£o de um n√£o-terminal", token.getPosition());
 					String str = token.getLexeme();
 					
 					if (s.contains(str))
-						throw new SemanticError("N„o-terminal repetido : "+str, token.getPosition());
+						throw new SemanticError("N√£o-terminal repetido : "+str, token.getPosition());
 					else
 						s.add(str);
 					
@@ -119,12 +119,12 @@ public class Parser implements Constants
 	        		pos++;
 	        		if ((token=scanner.nextToken()) != null)// mais de um terminal por linha
 	        		{
-	        			throw new SemanticError("Cada linha deve conter a declaraÁ„o de apenas um sÌmbolo n„o-terminal", token.getPosition());
+	        			throw new SemanticError("Cada linha deve conter a declara√ß√£o de apenas um s√≠mbolo n√£o-terminal", token.getPosition());
 	        		}
 	        	}
 	        }
         	if (nt.size() == 0)
-        		throw new SemanticError("Conjunto de N„o-Terminais n„o pode ser vazio", 0);
+        		throw new SemanticError("Conjunto de N√£o-Terminais n√£o pode ser vazio", 0);
 	    }
 		catch(AnalysisError e)
 		{
@@ -199,7 +199,7 @@ public class Parser implements Constants
 			if (p >= 0)
 			{
 				int[] production = PRODUCTIONS[p];
-				//empilha a produÁ„o em ordem reversa
+				//empilha a produ√ß√£o em ordem reversa
 				for (int i=production.length-1; i>=0; i--)
 				{
 					stack.push(new Integer(production[i]));
@@ -225,7 +225,7 @@ public class Parser implements Constants
 	}
 	
 	/**
-     * @return TRUE se x eh um sÌmbolo terminal
+     * @return TRUE se x eh um s√≠mbolo terminal
      */
     private final boolean isTerminal(int x)
     {
@@ -233,7 +233,7 @@ public class Parser implements Constants
     }
 
     /**
-     * @return TRUE se x eh um sÌmbolo n„o terminal
+     * @return TRUE se x eh um s√≠mbolo n√£o terminal
      */
     private final boolean isNonTerminal(int x)
     {
@@ -241,7 +241,7 @@ public class Parser implements Constants
     }
     
     /**
-     * @return TRUE se x eh uma AÁ„o Sem‚ntica
+     * @return TRUE se x eh uma A√ß√£o Sem√¢ntica
      */
     private final boolean isSemanticAction(int x)
     {

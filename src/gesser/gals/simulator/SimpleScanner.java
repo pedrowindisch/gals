@@ -45,6 +45,6 @@ public class SimpleScanner
 		}
 		pos++;			
 		
-		throw new LexicalError("SÌmbolo Inv·lido", pos);
+		throw new LexicalError("S√≠mbolo Inv√°lido", pos);
 	}
 }

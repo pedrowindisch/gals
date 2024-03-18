@@ -721,7 +721,7 @@ public class DelphiCommomGenerator
 		}
 					
 		for (int i=g.FIRST_NON_TERMINAL; i< symbs.length; i++)
-			result.append("        '"+symbs[i]+" inválido',\n");
+			result.append("        '"+symbs[i]+" invÃ¡lido',\n");
 			
 		result.setLength(result.length()-2);
 		result.append(

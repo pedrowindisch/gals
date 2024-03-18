@@ -8,8 +8,8 @@ import gesser.gals.generator.parser.Production;
 import java.util.BitSet;
 
 /**
- * LL1Grammar representa a classe das gram·ticas LL(1)
- * Esta classe possui um algorÌtimo de parsing preditivo.
+ * LL1Grammar representa a classe das gram√°ticas LL(1)
+ * Esta classe possui um algor√≠timo de parsing preditivo.
  *
  * @author Carlos Eduardo Gesser
  */
@@ -20,9 +20,9 @@ public class LLParser
     public LLParser(Grammar g) throws NotLLException
     {
     	if (! g.isFactored())
-    		throw new NotLLException("Gram·tica n„o Fatorada");
+    		throw new NotLLException("Gram√°tica n√£o Fatorada");
     	if (g.hasLeftRecursion())
-			throw new NotLLException("Gram·tica possui Recurs„o ‡ Esquerda");
+			throw new NotLLException("Gram√°tica possui Recurs√£o √† Esquerda");
     	
     	this.g = g;    	
     }
@@ -33,7 +33,7 @@ public class LLParser
     }
 
     /**
-     * @param p produÁ„o para se calcular o conjunto predict
+     * @param p produ√ß√£o para se calcular o conjunto predict
      *
      * @return BitSet contendo os tokens do lookahead de p
      */
@@ -105,7 +105,7 @@ public class LLParser
 		result.append(
 			"<HTML>"+
 			"<HEAD>"+
-			"<TITLE>Tabela de An·lise LL(1)</TITLE>"+
+			"<TITLE>Tabela de An√°lise LL(1)</TITLE>"+
 			"</HEAD>"+
 			"<BODY><FONT face=\"Verdana, Arial, Helvetica, sans-serif\">"+
 			"<TABLE border=1 cellspacing=0>");

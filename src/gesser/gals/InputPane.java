@@ -44,10 +44,10 @@ public class InputPane extends JPanel implements MouseListener, UndoableEditList
 	private JPanel base = new JPanel(new BorderLayout());
 	private JList errorList = new JList();
 	
-	private JPanel pnlGrammar 		= createPanel(" Gram·tica", grammar, new BNFDocument());
-	private JPanel pnlNonTerminals = createPanel(" N„o Terminais", nonTerminals, new NTDocument());
+	private JPanel pnlGrammar 		= createPanel(" Gram√°tica", grammar, new BNFDocument());
+	private JPanel pnlNonTerminals = createPanel(" N√£o Terminais", nonTerminals, new NTDocument());
 	private JPanel pnlTokens 		= createPanel(" Tokens", tokens, new TokensDocument());
-	private JPanel pnlDefinitions  = createPanel(" DefiniÁıes Regulares", definitions, new DefinitionsDocument());
+	private JPanel pnlDefinitions  = createPanel(" Defini√ß√µes Regulares", definitions, new DefinitionsDocument());
 	
 	private int mode;
 	
@@ -293,16 +293,16 @@ public class InputPane extends JPanel implements MouseListener, UndoableEditList
 		switch (e.getMode())
 		{
 			case MetaException.DEFINITION :
-				msg = "Erro em DefiniÁ„o Regular: ";
+				msg = "Erro em Defini√ß√£o Regular: ";
 				break;
 			case MetaException.TOKEN :
-				msg = "Erro na EspecificaÁ„o de Tokens: ";
+				msg = "Erro na Especifica√ß√£o de Tokens: ";
 				break;
 			case MetaException.NON_TERMINAL :
-				msg = "Erro na DeclaraÁ„o dos N„o-Terminais: ";
+				msg = "Erro na Declara√ß√£o dos N√£o-Terminais: ";
 				break;
 			case MetaException.GRAMMAR :
-				msg = "Erro na EspecificaÁ„o da Gram·tica: ";
+				msg = "Erro na Especifica√ß√£o da Gram√°tica: ";
 				break;
 		}
 		msg += ae.getMessage();

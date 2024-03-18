@@ -140,8 +140,8 @@ public class FiniteAutomata
 			{
 				if (sim.analyse(specialCases[j].key) != i)
 					throw new SemanticError("O valor \""+specialCases[j].key+
-						"\" n„o È v·lido como caso especial de '"+tokenNames.get(i-2)+
-                       "', na definiÁ„o de '"+tokenNames.get(specialCases[j].value-2)+"'" );
+						"\" n√£o √© v√°lido como caso especial de '"+tokenNames.get(i-2)+
+                       "', na defini√ß√£o de '"+tokenNames.get(specialCases[j].value-2)+"'" );
 			}
 		}
 	}
@@ -227,7 +227,7 @@ public class FiniteAutomata
 		result.append(
 		"<HTML>"+
 		"<HEAD>"+
-		"<TITLE> Tabela de TransiÁıes </TITLE>"+
+		"<TITLE> Tabela de Transi√ß√µes </TITLE>"+
 		"</HEAD>"+
 		"<BODY><FONT face=\"Verdana, Arial, Helvetica, sans-serif\">"+
 		"<TABLE border=1 cellspacing=0>");
@@ -298,7 +298,8 @@ public class FiniteAutomata
 		result.append(
 		"</TABLE>"+
 		"</FONT></BODY>"+
-		"</HTML>"+		"");
+		"</HTML>"+
+		"");
 				
 		return result.toString();
 	}
@@ -388,7 +389,7 @@ public class FiniteAutomata
 		if (tokenForState(0) >= 0)
 			errors[0] = "";
 		else*/
-			errors[0] = "Caractere n„o esperado";
+			errors[0] = "Caractere n√£o esperado";
 		
 		for (int i = 1; i < transitions.length; i++ )
 		{

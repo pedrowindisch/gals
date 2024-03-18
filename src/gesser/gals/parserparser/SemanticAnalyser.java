@@ -87,7 +87,7 @@ public class SemanticAnalyser implements Constants
 	private void action4() throws SemanticError
 	{
 		if (! symbols.containsKey(token.getLexeme()))
-			throw new SemanticError("SÌmbolo "+token.getLexeme()+" n„o declarado", token.getPosition());
+			throw new SemanticError("S√≠mbolo "+token.getLexeme()+" n√£o declarado", token.getPosition());
 	}
 	
 	private void action5()

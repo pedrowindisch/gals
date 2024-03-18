@@ -365,7 +365,7 @@ public class CSharpParserGenerator
 		"        if (p >= 0)\n"+
 		"        {\n"+
 		"            int[] production = ParserConstants.PRODUCTIONS[p];\n"+
-		"            //empilha a produ��o em ordem reversa\n"+
+		"            //empilha a produï¿½ï¿½o em ordem reversa\n"+
 		"            for (int i=production.Length-1; i>=0; i--)\n"+
 		"            {\n"+
 		"                stack.Push(production[i]);\n"+
@@ -524,7 +524,7 @@ public class CSharpParserGenerator
 		"{\n"+
 		"    public void executeAction(int action, Token token)\n"+
 		"    {\n"+
-		"        Console.WriteLine(\"A��o #\"+action+\", Token: \"+token);\n"+
+		"        Console.WriteLine(\"Aï¿½ï¿½o #\"+action+\", Token: \"+token);\n"+
 		"    }	\n"+
 		"}\n"+
 		"";

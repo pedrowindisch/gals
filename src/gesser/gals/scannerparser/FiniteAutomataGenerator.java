@@ -40,7 +40,7 @@ public class FiniteAutomataGenerator implements Constants
 	public void addDefinition(String id, Node root) throws SemanticError
 	{
 		if (definitions.containsKey(id))
-			throw new SemanticError("DefiniÁ„o repetida: "+id);
+			throw new SemanticError("Defini√ß√£o repetida: "+id);
 		
 		definitions.put(id, root);
 		
@@ -56,7 +56,7 @@ public class FiniteAutomataGenerator implements Constants
 	{
 		/*
 		if (tokenList.contains(id))
-			throw new SemanticError("Token '"+id+"' j· definido");
+			throw new SemanticError("Token '"+id+"' j√° definido");
 		*/	
 		alphabet.or(root.getAlphabet());
 		
@@ -112,12 +112,12 @@ public class FiniteAutomataGenerator implements Constants
 			value = value.toUpperCase();
 			
 		if (!expressions.containsKey(base))
-			throw new SemanticError("Token '"+base+"' n„o definido");
+			throw new SemanticError("Token '"+base+"' n√£o definido");
 			
 		int b = tokenList.indexOf(base)+2;
 		
 		if (tokenList.contains(id))
-			throw new SemanticError("Token '"+id+"' j· definido");
+			throw new SemanticError("Token '"+id+"' j√° definido");
 		
 		Integer i = new Integer(tokenList.size()+2);
 		
@@ -129,7 +129,7 @@ public class FiniteAutomataGenerator implements Constants
 			specialCases.put(new Integer(b), s);
 		}
 		else if (s.get(value) != null)
-			throw new SemanticError("J· houve a definiÁ„o de um caso especial de '"+base+"' com o valor\""+value+"\"");
+			throw new SemanticError("J√° houve a defini√ß√£o de um caso especial de '"+base+"' com o valor\""+value+"\"");
 			
 		s.put(value, i);
 		
@@ -146,7 +146,7 @@ public class FiniteAutomataGenerator implements Constants
 		Map back = new TreeMap();
 		
 		if (root == null)
-			throw new SemanticError("A EspecificaÁ„o LÈxica deve conter a definiÁ„o de pelo menos um Token");
+			throw new SemanticError("A Especifica√ß√£o L√©xica deve conter a defini√ß√£o de pelo menos um Token");
 		
 		computeNext();
 		

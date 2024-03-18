@@ -72,7 +72,7 @@ public class GASParser implements Constants
                 return true;
 
             case 5:
-                throw new SyntaticError("Erro sint·tico", currentToken.getPosition());
+                throw new SyntaticError("Erro sint√°tico", currentToken.getPosition());
         }
         return false;
     }

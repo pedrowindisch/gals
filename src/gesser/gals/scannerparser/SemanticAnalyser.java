@@ -132,7 +132,7 @@ public class SemanticAnalyser implements Constants
     {
 		Node def = gen.getDefinition(token.getLexeme());
 		if (def == null)
-			throw new RuntimeException(new SemanticError("DefiniÁ„o n„o declarada: "+token.getLexeme(), token.getPosition()));
+			throw new RuntimeException(new SemanticError("Defini√ß√£o n√£o declarada: "+token.getLexeme(), token.getPosition()));
 	
 		fator.push( def.clone() );
     }
@@ -166,7 +166,7 @@ public class SemanticAnalyser implements Constants
 		char c2 = (char) new BitSetIterator(n2.alphabet).nextInt();
 		
 		if (c1 >= c2)
-			throw new RuntimeException(new SemanticError("Intervalo inv·lido", token.getPosition()));
+			throw new RuntimeException(new SemanticError("Intervalo inv√°lido", token.getPosition()));
 			
     	fator.push( Node.createIntervalNode( c1, c2) );
     }

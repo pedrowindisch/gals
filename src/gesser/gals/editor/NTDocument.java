@@ -63,7 +63,7 @@ public class NTDocument extends SyntaxDocument implements Constants
 							att = COMMENT;
 							break;
 						default:
-							throw new LexicalError("N„o terminal inv·lido", pos);
+							throw new LexicalError("N√£o terminal inv√°lido", pos);
 					}
 					setCharacterAttributes(oldPos, pos-oldPos, NORMAL, true);
 					setCharacterAttributes(pos, length, att, true);

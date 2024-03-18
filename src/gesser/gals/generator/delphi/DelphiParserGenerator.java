@@ -367,7 +367,7 @@ public class DelphiParserGenerator
 			"    p := PARSER_TABLE[topStack-FIRST_NON_TERMINAL, tokenInput-1];\n"+
 			"    if p >= 0 then\n"+
 			"    begin\n"+
-			"        //empilha a produção em ordem reversa\n"+
+			"        //empilha a produÃ§Ã£o em ordem reversa\n"+
 			"        length := PRODUCTIONS[p, 0];\n"+
 			"        for i := length downto 1 do\n"+
 			"            stack.add( Pointer( PRODUCTIONS[p, i] ) );\n"+
